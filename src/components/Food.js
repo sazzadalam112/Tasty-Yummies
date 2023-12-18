@@ -4,14 +4,15 @@ import { TbPlayCard } from "react-icons/tb";
 import { ArrowSmRightIcon } from "@heroicons/react/outline"
 
 const Meal = () => {
-    const [foods, setFoods] = useState(mealData)
+    const [foods, setFoods] = useState(mealData);
     const fillterCat = (category) => {
         setFoods(
             mealData.filter((item) => {
-                return item.category === category;
+                return item.category === category
             })
         );
     };
+
     return (
         <div className="grid max-w-[1520px] m-auto px-4 py-12">
             <h1 className="text-center text-orange-700 text-2xl font-bold py-2">
@@ -22,13 +23,16 @@ const Meal = () => {
                     <button onClick={() => setFoods(mealData)}
                         className="m-1 h-10 w-16 p-1 bg-black text-white rounded-2xl hover:bg-orange-700">All
                     </button>
-                    <button onClick={() => fillterCat("pizza")}
+                    <button
+                        onClick={() => fillterCat("pizza")}
                         className="m-1 h-10 w-16 p-1 bg-black text-white rounded-2xl hover:bg-orange-700">Pizza
                     </button>
-                    <button onClick={() => fillterCat("chicken")}
+                    <button
+                        onClick={() => fillterCat("chicken")}
                         className="m-1 h-10 w-16 p-1 bg-black text-white rounded-2xl hover:bg-orange-700">Chicken
                     </button>
-                    <button onClick={() => fillterCat("salad")}
+                    <button
+                        onClick={() => fillterCat("salad")}
                         className="m-1 h-10 w-16 p-1 bg-black text-white rounded-2xl hover:bg-orange-700">Salad
                     </button>
                 </div>
@@ -37,7 +41,7 @@ const Meal = () => {
                 {
                     foods.map((item) => (
                         <div key={item.id} className="border-none hover:scale-105 duration-500 ">
-                            <img className="md:h-[200px] w-full py-5 object-cover text-center bg-center rounded-3xl"
+                            <img className="h-60 w-80 md:h-[200px] md:w-full py-5 object-cover text-center bg-center rounded-3xl"
                                 src={item.image} alt={item.name}
                             />
                             <div className="flex justify-between px-2 py-4">
